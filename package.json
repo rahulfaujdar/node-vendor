@@ -1,0 +1,12 @@
+{
+  "name": "node-hub",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/rahulfaujdar/node-hub.git",
+  "author": "Rahul Faujdar",
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "node-hub"
+  ]
+}
