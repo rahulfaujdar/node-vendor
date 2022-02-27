@@ -3,15 +3,10 @@
     "module": "commonjs",
     "target": "es5",
     "outDir": "./",
+    "declaration": true,
     "moduleResolution": "node",
-    "downlevelIteration": true,
-    "skipLibCheck": true,
-    "noEmitOnError": false,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "sourceMap": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
     "lib": [
       "es2017"
     ]

@@ -36,4 +36,3 @@ var Response = function (_a) {
     };
 };
 exports.Response = Response;
-//# sourceMappingURL=node-hub.js.map
