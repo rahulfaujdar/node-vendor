@@ -5,8 +5,18 @@
   "repository": "https://github.com/rahulfaujdar/node-hub.git",
   "author": "Rahul Faujdar",
   "license": "MIT",
+  "scripts": {
+    "watch": "tsc --watch"
+  },
   "keywords": [
     "node",
     "node-hub"
-  ]
+  ],
+  "dependencies": {
+    "http": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "typescript": "^4.5.5"
+  }
 }
