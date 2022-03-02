@@ -1,26 +1,26 @@
-import http from "http";
-
-export const createServer = (port: number) => {
-    http.createServer().listen(port);
-}
-
 interface PaginateParam {
     data?: [],
     limit?: number,
     page?: number,
 }
 
-export const Paginate = ({data = [], limit, page}: PaginateParam) => {
+export const paginate = ({data = [], limit, page}: PaginateParam) => {
+    const total = data.length;
+    let _data;
     if (limit && !page) {
-        return data.slice(0, limit);
+        _data = data.slice(0, limit);
     } else if (!limit && page) {
         const offset = 10 * (page - 1);
-        return data.slice(offset, offset + 10);
+        _data = data.slice(offset, offset + 10);
     } else if (limit && page) {
         const offset = limit * (page - 1);
-        return data.slice(offset, offset + Number(limit));
+        _data = data.slice(offset, offset + Number(limit));
     } else {
-        return data;
+        _data = data;
+    }
+    return {
+        data: _data,
+        total
     }
 }
 

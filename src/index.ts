@@ -1,1 +1,1 @@
-export {createServer, Paginate, Response} from "./node-vendor";
+export {paginate, Response} from "./node-vendor";

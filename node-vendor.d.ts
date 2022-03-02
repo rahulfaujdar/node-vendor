@@ -1,10 +1,12 @@
-export declare const createServer: (port: number) => void;
 interface PaginateParam {
     data?: [];
     limit?: number;
     page?: number;
 }
-export declare const Paginate: ({ data, limit, page }: PaginateParam) => never[];
+export declare const paginate: ({ data, limit, page }: PaginateParam) => {
+    data: any;
+    total: 0;
+};
 interface ResponseParam {
     type?: string;
     message?: string;

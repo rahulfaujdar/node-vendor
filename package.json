@@ -10,7 +10,9 @@
   },
   "keywords": [
     "node",
-    "node-hub"
+    "node-vendor",
+    "paginate",
+    "node-paginate"
   ],
   "dependencies": {
     "http": "^0.0.1-security"

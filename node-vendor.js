@@ -1,32 +1,30 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Response = exports.Paginate = exports.createServer = void 0;
-var http_1 = __importDefault(require("http"));
-var createServer = function (port) {
-    http_1.default.createServer().listen(port);
-};
-exports.createServer = createServer;
-var Paginate = function (_a) {
+exports.Response = exports.paginate = void 0;
+var paginate = function (_a) {
     var _b = _a.data, data = _b === void 0 ? [] : _b, limit = _a.limit, page = _a.page;
+    var total = data.length;
+    var _data;
     if (limit && !page) {
-        return data.slice(0, limit);
+        _data = data.slice(0, limit);
     }
     else if (!limit && page) {
         var offset = 10 * (page - 1);
-        return data.slice(offset, offset + 10);
+        _data = data.slice(offset, offset + 10);
     }
     else if (limit && page) {
         var offset = limit * (page - 1);
-        return data.slice(offset, offset + Number(limit));
+        _data = data.slice(offset, offset + Number(limit));
     }
     else {
-        return data;
+        _data = data;
     }
+    return {
+        data: _data,
+        total: total
+    };
 };
-exports.Paginate = Paginate;
+exports.paginate = paginate;
 var Response = function (_a) {
     var type = _a.type, message = _a.message, data = _a.data;
     return {
