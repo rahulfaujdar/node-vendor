@@ -10,4 +10,4 @@
 
       const list = [{}, {}, {}, ...];
 
-      paginate({data: list, limit: 10, page: 1});
+      res.send(paginate(list, {limit: 10, page: 1}));
