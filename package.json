@@ -1,6 +1,6 @@
 {
   "name": "node-vendor",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "index.js",
   "repository": "https://github.com/rahulfaujdar/node-hub.git",
   "author": "Rahul Faujdar",
