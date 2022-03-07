@@ -1,36 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Response = exports.paginate = void 0;
-var paginate = function (_a) {
-    var _b = _a.data, data = _b === void 0 ? [] : _b, limit = _a.limit, page = _a.page;
-    var total = data.length;
-    var _data;
-    if (limit && !page) {
-        _data = data.slice(0, limit);
-    }
-    else if (!limit && page) {
-        var offset = 10 * (page - 1);
-        _data = data.slice(offset, offset + 10);
-    }
-    else if (limit && page) {
-        var offset = limit * (page - 1);
-        _data = data.slice(offset, offset + Number(limit));
-    }
-    else {
-        _data = data;
-    }
+exports.paginate = void 0;
+var paginate = function (data, _a) {
+    if (data === void 0) { data = []; }
+    var _b = _a === void 0 ? {} : _a, limit = _b.limit, _c = _b.page, page = _c === void 0 ? 0 : _c, _d = _b.offset, offset = _d === void 0 ? 0 : _d;
+    var _total = data.length;
+    var _offset = page ? limit * (page - 1) : Number(offset);
+    var _limit = limit ? _offset + Number(limit) : _total;
+    var _data = data.slice(_offset, _limit);
     return {
         data: _data,
-        total: total
+        total: _total
     };
 };
 exports.paginate = paginate;
-var Response = function (_a) {
-    var type = _a.type, message = _a.message, data = _a.data;
-    return {
-        type: type,
-        message: message,
-        data: data
-    };
-};
-exports.Response = Response;
